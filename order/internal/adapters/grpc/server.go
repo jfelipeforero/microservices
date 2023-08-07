@@ -6,7 +6,7 @@ import (
         "log"
         "github.com/jfelipeforero/microservices-proto/golang/order"
         "github.com/jfelipeforero/microservices/order/config"
-        "github.com/jfelipeforero/microservices/internal/ports"
+        "github.com/jfelipeforero/microservices/order/internal/ports"
 
         "google.golang.org/grpc/reflection"	
         "google.golang.org/grpc"

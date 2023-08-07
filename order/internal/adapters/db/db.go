@@ -2,7 +2,7 @@ package db
 
 import (
         "fmt"
-        "github.com/jfelipeforero/grpc/order/internal/application/core/domain"
+        "github.com/jfelipeforero/microservices/order/internal/application/core/domain"
         "gorm.io/driver/mysql"
         "gorm.io/gorm"
 )
@@ -44,7 +44,7 @@ func (a Adapter) Get(id string) (domain.Order, error) {
         res := a.db.First(&orderEntity, id)
         var orderItems []domain.OrderItem
         for _, orderItem := range orderEntity.OrderItems {
-                orderItems = append(orderItems, domain.OrderItems{
+                orderItems = append(orderItems, domain.OrderItem{
                         ProductCode: orderItem.ProductCode,
                         UnitPrice: orderItem.UnitPrice,
                         Quantity: orderItem.Quantity,
